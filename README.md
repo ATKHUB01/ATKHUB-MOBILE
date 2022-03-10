@@ -1,4 +1,4 @@
-_G.FarmLevel = true
+_G.FarmLevel = false
 
 function CheckLevel()
     local MyLevel = game.Players.LocalPlayer.Data.Level.Value

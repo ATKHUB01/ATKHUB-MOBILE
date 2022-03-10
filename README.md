@@ -1609,14 +1609,14 @@ end
     local lv = game.Players.LocalPlayer.Data.Level.Value
 
     if OldWorld then
-        if lv == 1 or lv <= 9 then
+        if lv == 1 or lv <= 12 then
             Mon = "Bandit [Lv. 5]"
             NameQ = "BanditQuest1"
             NumberQ = 1
             NameMon = "Bandit"
             POSQ = CFrame.new(1061.11, 16.3627, 1549.23)
             POSMON = CFrame.new(1155.15, 16.4329, 1586.9)
-        elseif lv == 10 or lv <= 19 then
+        elseif lv == 13 or lv <= 10000 then
             Mon = "Monkey [Lv. 14]"
             NameQ = "JungleQuest"
             NumberQ = 1

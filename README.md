@@ -1791,69 +1791,31 @@ spawn(function()
 end)
 
 spawn(function()
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if _G.FarmLevel then
-            if not game:GetService("Workspace"):FindFirstChild("LOL") then
-                local LOL = Instance.new("Part")
-                LOL.Name = "LOL"
-                LOL.Parent = game.Workspace
-                LOL.Anchored = true
-                LOL.Transparency = 0
-                LOL.Size = Vector3.new(20,-0.5,20)
-                LOL.Material = "Neon"
-            elseif game:GetService("Workspace"):FindFirstChild("LOL") then
-                game.Workspace["LOL"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,-3.5,0)
+    while wait() do 
+    pcall(function()
+            if _G.FarmLevel then
+                local Xd = Instance.new("Part")
+                Xd.Name = "xd"
+                Xd.Parent = game.Workspace
+                Xd.Anchored = true
+                Xd.Transparency = 0
+                Xd.Color = Color3.fromRGB(0, 255, 255)
+                Xd.Size = Vector3.new(15,0.5,15)
+                Xd.Material = "Neon"
+
+                if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-game.Workspace["xd"].Position).Magnitude > 5 then
+                    game.Workspace["xd"].CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.X,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Y-1.5,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
+                end
+
+
+            else
+                if game:GetService("Workspace").xd then
+                    game:GetService("Workspace").xd:Destroy()
+                end
             end
-        else
-            if game:GetService("Workspace"):FindFirstChild("LOL") then
-                game:GetService("Workspace"):FindFirstChild("LOL"):Destroy()
-            end
-        end
+
+
     end)
-end)
-
-
-spawn(function()
-    while wait() do
-        if game.Workspace:FindFirstChild("LOL") then
-            game.Workspace:FindFirstChild("LOL").Color = Color3.new(255/255,0/255,0/255)
-            for i = 0,255,10 do
-                wait(.1)
-                if game.Workspace:FindFirstChild("LOL") then
-                    game.Workspace:FindFirstChild("LOL").Color = Color3.new(255/255,i/255,0/255)
-                end
-            end
-            for i = 255,0,-10 do
-                wait(.1)
-                if game.Workspace:FindFirstChild("LOL") then
-                    game.Workspace:FindFirstChild("LOL").Color = Color3.new(i/255,255/255,0/255)
-                end
-            end
-            for i = 0,255,10 do
-                wait(.1)
-                if game.Workspace:FindFirstChild("LOL") then
-                    game.Workspace:FindFirstChild("LOL").Color = Color3.new(0/255,255/255,i/255)
-                end
-            end
-            for i = 255,0,-10 do
-                wait(.1)
-                if game.Workspace:FindFirstChild("LOL") then
-                    game.Workspace:FindFirstChild("LOL").Color = Color3.new(0/255,i/255,255/255)
-                end
-            end
-            for i = 0,255,10 do
-                wait(.1)
-                if game.Workspace:FindFirstChild("LOL") then
-                    game.Workspace:FindFirstChild("LOL").Color = Color3.new(i/255,0/255,255/255)
-                end
-            end
-            for i = 255,0,-10 do
-                wait(.1)
-                if game.Workspace:FindFirstChild("LOL") then
-                    game.Workspace:FindFirstChild("LOL").Color = Color3.new(255/255,0/255,i/255)
-                end
-            end
-        end
     end
 end)
 

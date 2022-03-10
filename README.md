@@ -1574,40 +1574,158 @@ local page6 = tap5:addpage()
 
 page1:Ti("Farm")
 
-getgenv().AutoFarm = false
-page1:Toggle("Auto Farm Level",getgenv().AutoFarm,function (value)
-	getgenv().AutoFarm = value
+_G.FarmLevel = false
+page1:Toggle("Auto Farm Level",_G.FarmLevel,function (value)
+	_G.FarmLevel = value
 end)
 
-_G.FarmLevel = true
-
-function CheckLevel()
+	function CheckLevel()
     local MyLevel = game.Players.LocalPlayer.Data.Level.Value
         
-    if MyLevel == 1 or MyLevel <= 9 then
+    if MyLevel == 1 or MyLevel <= 15 then
         Ms = "Bandit [Lv. 5]"
         NameMon = "Bandit"
         NameQuest = "BanditQuest1"
         LevelQuest = 1
         CFrameQuest = CFrame.new(1061.11, 16.3627, 1549.23)
-    elseif MyLevel == 10 or MyLevel <= 19 then
+    elseif MyLevel == 15 or MyLevel <= 20 then
         Ms = "Monkey [Lv. 14]"
         NameMon = "Monkey"
         NameQuest = "JungleQuest"
         LevelQuest = 1
         CFrameQuest = CFrame.new(-1600.509033203125, 36.8779296875, 153.25987243652344)
-    elseif MyLevel == 20 or MyLevel <= 29 then
+    elseif MyLevel == 20 or MyLevel <= 35 then
         Ms = "Gorilla [Lv. 20]"
         NameMon = "Gorilla"
         NameQuest = "JungleQuest"
         LevelQuest = 2
         CFrameQuest = CFrame.new(-1600.509033203125, 36.8779296875, 153.25987243652344)
-    elseif MyLevel == 30 or MyLevel <= 49 then
+    elseif MyLevel == 35 or MyLevel <= 45 then
         Ms = "Pirate [Lv. 35]"
         NameMon = "Pirate"
         NameQuest = "BuggyQuest1"
         LevelQuest = 1
         CFrameQuest = CFrame.new(-1140.515869140625, 4.777853488922119, 3830.275146484375)
+    elseif MyLevel == 45 or MyLevel <= 60 then
+        Ms = "Brute [Lv. 45]"
+        NameMon = "Brute"
+        NameQuest = "BuggyQuest1"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(-1140.515869140625, 4.777853488922119, 3830.275146484375)
+    elseif MyLevel == 60 or MyLevel <= 75 then
+        Ms = "Desert Bandit [Lv. 60]"
+        NameMon = "Desert Bandit"
+        NameQuest = "DesertQuest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(894.5579223632812, 6.464265823364258, 4390.8271484375)
+    elseif MyLevel == 75 or MyLevel <= 90 then
+        Ms = "Desert Officer [Lv. 70]"
+        NameMon = "Desert Officer"
+        NameQuest = "DesertQuest"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(894.5579223632812, 6.464265823364258, 4390.8271484375)
+    elseif MyLevel == 90 or MyLevel <= 9999 then
+        Ms = "Snow Bandit [Lv. 90]"
+        NameMon = "Snow Bandit"
+        NameQuest = "SnowQuest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(1388.5831298828125, 87.29856872558594, -1297.880615234375)
+    elseif MyLevel == 100 or MyLevel <= 120 then
+        Ms = "Snowman [Lv. 100]"
+        NameMon = "Snowman"
+        NameQuest = "SnowQuest"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(1388.5831298828125, 87.29856872558594, -1297.880615234375)
+    elseif MyLevel == 120 or MyLevel <= 150 then
+        Ms = "Chief Petty Officer [Lv. 120]"
+        NameMon = "Chief Petty Officer"
+        NameQuest = "MarineQuest2"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(-5037.86328125, 28.67783546447754, 4325.15625)
+    elseif MyLevel == 150 or MyLevel <= 175 then
+        Ms = "Sky Bandit [Lv. 150]"
+        NameMon = "Sky Bandit"
+        NameQuest = "SkyQuest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(-4840.25634765625, 717.6951293945312, -2620.5537109375)
+    elseif MyLevel == 175 or MyLevel <= 225 then
+        Ms = "Dark Master [Lv. 175]"
+        NameMon = "Dark Master"
+        NameQuest = "SkyQuest"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(-4840.25634765625, 717.6951293945312, -2620.5537109375)
+    elseif MyLevel == 225 or MyLevel <= 275 then
+        Ms = "Toga Warrior [Lv. 225]"
+        NameMon = "Toga Warrior"
+        NameQuest = "ColosseumQuest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(-1577.24853515625, 7.415140628814697, -2985.498046875)
+    elseif MyLevel == 275 or MyLevel <= 300 then
+        Ms = "Gladiator [Lv. 275]"
+        NameMon = "Gladiator"
+        NameQuest = "ColosseumQuest"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(-1577.24853515625, 7.415140628814697, -2985.498046875)
+    elseif MyLevel == 300 or MyLevel <= 330 then
+        Ms = "Military Soldier [Lv. 300]"
+        NameMon = "Military Soldier"
+        NameQuest = "MagmaQuest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(-5314.46728515625, 12.745513916015625, 8515.9384765625)
+    elseif MyLevel == 330 or MyLevel <= 375 then
+        Ms = "Military Spy [Lv. 330]"
+        NameMon = "Military Spy"
+        NameQuest = "MagmaQuest"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(-5314.46728515625, 12.745513916015625, 8515.9384765625)
+    elseif MyLevel == 375 or MyLevel <= 400 then
+        Ms = "Fishman Warrior [Lv. 375]"
+        NameMon = "Fishman Warrior"
+        NameQuest = "FishmanQuest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(61121.96875, 18.4974365234375, 1565.8970947265625)
+    elseif MyLevel == 400 or MyLevel <= 450 then
+        Ms = "Fishman Commando [Lv. 400]"
+        NameMon = "Fishman Commando"
+        NameQuest = "FishmanQuest"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(61121.96875, 18.4974365234375, 1565.8970947265625)
+    elseif MyLevel == 450 or MyLevel <= 475 then
+        Ms = "God's Guard [Lv. 450]"
+        NameMon = "God's Guard"
+        NameQuest = "SkyExp1Quest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(-4721.51318359375, 845.3027954101562, -1951.3292236328125)
+    elseif MyLevel == 475 or MyLevel <= 525 then
+        Ms = "Shanda [Lv. 475]"
+        NameMon = "Shanda"
+        NameQuest = "SkyExp1Quest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(-7860.27685546875, 5545.517578125, -380.9004211425781)
+    elseif MyLevel == 525 or MyLevel <= 550 then
+        Ms = "Royal Squad [Lv. 525]"
+        NameMon = "Royal Squad"
+        NameQuest = "SkyExp2Quest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(-7905.2568359375, 5635.98828125, -1411.6693115234375)
+    elseif MyLevel == 550 or MyLevel <= 625 then
+        Ms = "Royal Soldier [Lv. 550]"
+        NameMon = "Royal Soldier"
+        NameQuest = "SkyExp2Quest"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(-7905.2568359375, 5635.98828125, -1411.6693115234375)
+    elseif MyLevel == 625 or MyLevel <= 650 then
+        Ms = "Galley Pirate [Lv. 625]"
+        NameMon = "Galley Pirate"
+        NameQuest = "FountainQuest"
+        LevelQuest = 1
+        CFrameQuest = CFrame.new(5257.97509765625, 38.52693176269531, 4049.527587890625)
+    elseif MyLevel == 650 or MyLevel <= 9999 then
+        Ms = "Galley Captain [Lv. 650]"
+        NameMon = "Galley Captain"
+        NameQuest = "FountainQuest"
+        LevelQuest = 2
+        CFrameQuest = CFrame.new(5257.97509765625, 38.52693176269531, 4049.527587890625)
     end
 end
 function toposQ(Para1)
@@ -1666,21 +1784,6 @@ spawn(function()
                         Magnet = false
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
                     end
-                end
-            end
-        end)
-    end
-end)  
-
-spawn(function()
-    while task.wait() do
-        pcall(function()
-            CheckLevel()
-            for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                if _G.FarmLevel and Magnet and v.Name == Ms and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and (v.HumanoidRootPart.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 290 then
-                    v.HumanoidRootPart.CFrame = PosMon
-                    v.Humanoid:ChangeState(11)
-                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
                 end
             end
         end)

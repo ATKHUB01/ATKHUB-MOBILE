@@ -5,17 +5,6 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 
 local win = DiscordLib:Window("ATK HUB | BLOX FRUIT 17 PT.2")
 
-game.StarterGui:SetCore("SendNotification", { 
-
-                Title = "ATK HUB",
-
-                Text = "Loading... ", 
-
-                Icon = "http://www.roblox.com/asset/?id=9052484528", 
-
-                Duration = 2.5
-
-            })
 
 
 
